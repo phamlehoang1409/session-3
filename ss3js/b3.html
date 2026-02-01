@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let thanhCong = 0;
+        let khongThanhCong = 0;
+
+
+        while (true) {
+            let tiepTuc = prompt("Có yêu cầu gia hạn mới không(có/không)").toLowerCase();
+
+            if (tiepTuc === "không" || tiepTuc === "khong") {
+                break;
+            } else if (tiepTuc === "có" || tiepTuc === "co") {
+               
+                let tenTacGia = prompt("Nhập tên bạn đọc");
+                let tenSach = prompt("Nhập tên sách");
+                let soNgayDaMuon = +prompt("Số ngày đã mượn hiện tại");
+                let soNgayGiaHan = +prompt("Số ngày muốn gia hạn thêm");
+
+                if (soNgayDaMuon + soNgayGiaHan > 60) {
+                    console.log("Không được gia hạn Tổng thời gian vượt quá 60 ngày tối đa");
+                    khongThanhCong++;
+                }
+                else if (soNgayDaMuon > 45) {
+                    console.log("Không được gia hạn Đã mượn quá lâu (>45 ngày)");
+                    khongThanhCong++;
+                }
+                else {
+                    console.log("Gia hạn thành công");
+                    thanhCong++;
+                }
+
+                console.log("-----------------------------------------");
+            } else {
+                console.log("Vui lòng chỉ nhập 'có' hoặc 'không'.");
+            }
+        }
+
+        console.log(`Số lần gia hạn thành công ${thanhCong}`);
+        console.log(`Số lần gia hạn không thành công ${khongThanhCong}`);
+    </script>
+</body>
+
+</html>

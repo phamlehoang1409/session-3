@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let totalLoans = +prompt("Hôm nay có bao nhiêu lượt mượn sách");
+
+        while (isNaN(totalLoans) || totalLoans <= 0) {
+            totalLoans = +prompt("Vui lòng nhập một số nguyên dương");
+        }
+        let successCount = 0;
+        let warningCount = 0;
+
+        for (let i = 1; i <= totalLoans; i++) {
+            console.log(`--- Lượt mượn thứ ${i} ---`);
+
+            let borrowerName = prompt(`Nhập tên người mượn (lượt ${i})`);
+            let bookName = prompt(`Nhập tên sách (lượt ${i})`);
+            let loanDays = parseInt(prompt(`Nhập số ngày mượn`));
+
+        
+            while (isNaN(loanDays) || loanDays < 1 || loanDays > 30) {
+                loanDays = +prompt("Số ngày không hợp lệ");
+            }
+
+            if (loanDays > 14) {
+                console.log(`Người mượn: ${borrowerName}`);
+                console.log(`Sách: ${bookName}`);
+                console.log("Thời gian mượn vượt quy định ");
+                warningCount++;
+            } else {
+                console.log(`Người mượn: ${borrowerName}`);
+                console.log(`Sách: ${bookName}`);
+                console.log("Mượn thành công");
+                successCount++;
+            }
+        }
+
+        console.log("BÁO CÁO THỐNG KÊ CUỐI NGÀY");
+        console.log(`Tổng số lượt mượn: ${totalLoans}`);
+        console.log(`Số lượt thành công: ${successCount}`);
+        console.log(`Số lượt vượt quá hạn: ${warningCount}`);
+    </script>
+</body>
+
+</html>

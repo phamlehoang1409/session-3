@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let tongSoSach = 0;
+        let soSachMat = 0;
+        let soSachHetHang = 0;
+        let soSachTonNhieu = 0;
+        let soSachTonBinhThuong = 0;
+
+
+        while (true) {
+            let tiepTuc = prompt("Kiểm kê sách tiếp theo (có/không)");
+
+            if (tiepTuc === null || tiepTuc.toLowerCase() === "không" || tiepTuc.toLowerCase() === "khong") {
+                break;
+            }
+
+            if (tiepTuc.toLowerCase() === "có" || tiepTuc.toLowerCase() === "co") {
+                let maSach = "";
+                while (maSach.trim() === "") {
+                    maSach = prompt("Nhập mã sách");
+                }
+
+                let tenSach = prompt("Nhập tên sách");
+                let soLuong = +prompt("Số lượng thực tế đang có trong kho");
+                let tinhTrang = prompt("Tình trạng sách (1-Bình thường, 2-Mất)");
+
+                tongSoSach++;
+
+                if (tinhTrang === "2") {
+                    console.log(` Sách [${tenSach}] Phân loại Sách mất`);
+                    soSachMat++;
+                }
+                else if (tinhTrang === "1" && soLuong === 0) {
+                    console.log(` Sách [${tenSach}] Phân loại Sách hết`);
+                    soSachHetHang++;
+                }
+                else if (tinhTrang === "1" && soLuong >= 10) {
+                    console.log(` Sách [${tenSach}] Phân loại Sách tồn kho nhiều`);
+                    soSachTonNhieu++;
+                }
+                else if (tinhTrang === "1" && soLuong >= 1 && soLuong <= 9) {
+                    console.log(` Sách [${tenSach}] Phân loại Sách tồn kho bình thường`);
+                    soSachTonBinhThuong++;
+                }
+                else {
+                    console.log(` Sách [${tenSach}] Dữ liệu không hợp lệ`);
+                }
+            }
+        }
+        console.log(`Tổng số sách đã kiểm kê ${tongSoSach} cuốn`);
+        console.log(`Số sách mất            ${soSachMat} cuốn`);
+        console.log(`Số sách hết hàng       ${soSachHetHang} cuốn`);
+        console.log(`Số sách tồn kho nhiều  ${soSachTonNhieu} cuốn`);
+        console.log(`Số sách bình thường    ${soSachTonBinhThuong} cuốn`);
+    </script>
+</body>
+
+</html>

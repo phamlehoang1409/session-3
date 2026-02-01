@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let totalReturns = parseInt(prompt("Hôm nay có bao nhiêu lượt trả sách"));
+
+        while (isNaN(totalReturns) || totalReturns <= 0) {
+            totalReturns = +prompt("Vui lòng nhập một số nguyên dương cho tổng lượt trả:");
+        }
+
+        let lateCount = 0;
+
+        for (let i = 1; i <= totalReturns; i++) {
+            console.log(`--- Lượt trả thứ ${i} ---`);
+
+            let borrowerName = prompt(`Nhập tên người trả (lượt ${i})`);
+            let bookName = prompt(`Nhập tên sách (lượt ${i})`);
+
+            let actualDays;
+            while (true) {
+                actualDays = +prompt(`Nhập số ngày đã mượn thực tế cho cuốn "${bookName}"`);
+                if (!isNaN(actualDays) && actualDays >= 1) {
+                    break; 
+                }
+                alert("Nhập số nguyên lớn hơn hoặc bằng 1");
+            }
+
+            if (actualDays <= 14) {
+                console.log(`Trả đúng hạn`);
+            }
+            else if (actualDays >= 15 && actualDays <= 21) {
+                console.log(`Trả muộn nhẹ`);
+                console.log(`Phạt nhắc nhở`);
+                lateCount++;
+            }
+            else { 
+                console.log(`Quá hạn nghiêm trọng`);
+                console.log(`Cần ghi biên bản phạt`);
+                lateCount++;
+            }
+        }
+
+        console.log(`Tổng số lượt trả sách: ${totalReturns}`);
+        console.log(`Số lượt trả muộn : ${lateCount}`);
+    </script>
+</body>
+
+</html>
