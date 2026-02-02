@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>JavaScript Loops Lessons - Detailed</title>
+  </head>
+  <body>
+    <outline text="JavaScript Loops">
+      
+      <outline text="Lesson 1: For...loop trong JavaScript">
+        <outline text="Khái niệm: Vòng lặp lặp với số lần xác định"/>
+        <outline text="Cú pháp: for(init; condition; step)"/>
+        <outline text="Ví dụ: for(let i=0; i<5; i++)"/>
+        <outline text="Ứng dụng: Duyệt mảng, lặp số lần cố định"/>
+        <outline text="Lỗi thường gặp: Quên tăng i, điều kiện sai"/>
+      </outline>
+
+      <outline text="Lesson 2: Infinite loop & Nested loop trong JavaScript">
+        <outline text="Infinite loop: Vòng lặp vô hạn"/>
+        <outline text="Nguyên nhân: Điều kiện luôn đúng"/>
+        <outline text="Cách tránh: Đảm bảo có điều kiện dừng"/>
+        <outline text="Nested loop: Vòng lặp lồng nhau"/>
+        <outline text="Ứng dụng: Bảng cửu chương, ma trận"/>
+      </outline>
+
+      <outline text="Lesson 3: Break & Continue">
+        <outline text="Break: Thoát khỏi vòng lặp ngay lập tức"/>
+        <outline text="Continue: Bỏ qua vòng lặp hiện tại"/>
+        <outline text="Ví dụ break: Dừng khi gặp giá trị đặc biệt"/>
+        <outline text="Ví dụ continue: Bỏ qua số chẵn/lẻ"/>
+        <outline text="Lưu ý: Dùng đúng để tránh lỗi logic"/>
+      </outline>
+
+      <outline text="Lesson 4: While...loop">
+        <outline text="Khái niệm: Lặp khi điều kiện còn đúng"/>
+        <outline text="Cú pháp: while(condition)"/>
+        <outline text="Ví dụ: while(i < 10)"/>
+        <outline text="Ứng dụng: Khi chưa biết trước số lần lặp"/>
+        <outline text="Rủi ro: Dễ gây infinite loop"/>
+      </outline>
+
+      <outline text="Lesson 5: Do-while...loop">
+        <outline text="Khái niệm: Chạy ít nhất 1 lần rồi mới kiểm tra điều kiện"/>
+        <outline text="Cú pháp: do { } while(condition)"/>
+        <outline text="Ví dụ: do { i++; } while(i < 5)"/>
+        <outline text="Khác với while: Luôn chạy ít nhất 1 lần"/>
+        <outline text="Ứng dụng: Menu, nhập dữ liệu cho đến khi hợp lệ"/>
+      </outline>
+
+    </outline>
+  </body>
+</opml>
